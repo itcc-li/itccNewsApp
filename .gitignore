@@ -1,5 +1,5 @@
 .gradle/
-/.idea
+.idea/
 .DS_Store
 /captures
 *.iml
