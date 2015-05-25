@@ -2,7 +2,7 @@
 .idea/
 .DS_Store
 /captures
-*.iml
+**.iml
 
 # Built application files
 *.apk
