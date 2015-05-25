@@ -1,8 +1,8 @@
-.gradle
-/.idea/workspace.xml
-/.idea/libraries
+.gradle/
+/.idea
 .DS_Store
 /captures
+*.iml
 
 # Built application files
 *.apk
@@ -18,8 +18,7 @@
 bin/
 gen/
 
-# Gradle files
-.gradle/
+# Build Folders
 build/
 /*/build/
 

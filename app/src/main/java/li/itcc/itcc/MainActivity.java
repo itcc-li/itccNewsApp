@@ -1,5 +1,7 @@
 package li.itcc.itcc;
 
+import android.content.Intent;
+import android.provider.CalendarContract;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,7 +16,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /*
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -33,8 +35,17 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        else if (id == R.id.action_calendar) {
+            //http://developer.android.com/guide/topics/providers/calendar-provider.html#intents
+
+            // ACTION_INSERT does not work on all phones
+            // use  Intent.ACTION_EDIT in this case
+            Intent intent = new Intent(Intent.ACTION_INSERT);
+            intent.setData(CalendarContract.Events.CONTENT_URI);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
-    */
+
 }
