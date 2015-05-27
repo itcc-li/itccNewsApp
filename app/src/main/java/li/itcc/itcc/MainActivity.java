@@ -5,7 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import li.itcc.itcc.utils.utils;
+
+import li.itcc.itcc.utils.CalendarUtils;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -35,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
         else if (id == R.id.action_calendar) {
-            utils util = new utils();
+            CalendarUtils util = new CalendarUtils();
             Intent intent = util.createCalendarIntent();
             startActivity(intent);
         }
