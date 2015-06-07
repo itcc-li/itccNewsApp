@@ -3,15 +3,17 @@ package li.itcc.itcc;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import li.itcc.itcc.utils.CalendarUtils;
+import li.itcc.itcc.fragments.MainActivityFragment;
+import li.itcc.itcc.fragments.Test2Fragment;
+import li.itcc.itcc.fragments.TestFragment;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,8 @@ public class MainActivity extends ActionBarActivity {
             return true;
         } else if (id == R.id.action_calendar) {
             CalendarUtils util = new CalendarUtils();
-            Intent intent = util.createCalendarIntent();
-            startActivity(intent);
+            //Intent intent = util.createCalendarIntent();
+            //startActivity(intent);
         } else if (id == R.id.action_test) {
             // Create new fragment and transaction
             Fragment newFragment = new TestFragment();
@@ -59,6 +61,16 @@ public class MainActivity extends ActionBarActivity {
 
             // Commit the transaction
             transaction.commit();
+        } else if (id == R.id.action_test2) {
+
+            Fragment newFragment = new Test2Fragment();
+
+            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+            // Replace whatever is in the fragment_container view with this fragment,
+            // and add the transaction to the back stack if needed
+            transaction.replace(R.id.container, newFragment);
+            transaction.addToBackStack(null);
         }
         return super.onOptionsItemSelected(item);
     }

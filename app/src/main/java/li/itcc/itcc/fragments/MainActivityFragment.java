@@ -1,4 +1,4 @@
-package li.itcc.itcc;
+package li.itcc.itcc.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import li.itcc.itcc.R;
 
 
 /**
