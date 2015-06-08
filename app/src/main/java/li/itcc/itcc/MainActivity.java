@@ -71,6 +71,9 @@ public class MainActivity extends FragmentActivity {
             // and add the transaction to the back stack if needed
             transaction.replace(R.id.container, newFragment);
             transaction.addToBackStack(null);
+
+            // Commit the transaction
+            transaction.commit();
         }
         return super.onOptionsItemSelected(item);
     }
